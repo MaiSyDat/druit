@@ -1,0 +1,41 @@
+// Định nghĩa các biến cho từng loại thiết bị
+$DESKTOP: "DESKTOP"; // Màn hình lớn (Desktop)
+$MEDIUM_DEVICE: "MEDIUM_DEVICE"; // Màn hình trung bình (Laptop hoặc Desktop nhỏ)
+$TABLET_DEVICE: "TABLET_DEVICE"; // Màn hình máy tính bảng
+$WIDE_MOBILE: "WIDE_MOBILE"; // Màn hình di động lớn (phablet)
+$SMALL_DEVICES: "SMALL_DEVICE"; // Màn hình di động nhỏ
+
+// Mixin giúp tạo các breakpoint dựa trên loại thiết bị
+@mixin Responsive($canvas) {
+
+    // Kiểm tra nếu loại thiết bị là Desktop
+    @if ($canvas)==$DESKTOP {
+        @media only screen and (min-width: 1200px) {
+            @content; // Nội dung CSS sẽ được áp dụng tại đây
+        }
+    }
+
+    @else if ($canvas)==$MEDIUM_DEVICE {
+        @media only screen and (min-width: 992px) and (max-width: 1199px) {
+            @content;
+        }
+    }
+
+    @else if ($canvas)==$TABLET_DEVICE {
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+            @content;
+        }
+    }
+
+    @else if ($canvas)==$WIDE_MOBILE {
+        @media only screen and (min-width: 767px) {
+            @content;
+        }
+    }
+
+    @else if ($canvas)==$SMALL_DEVICES {
+        @media only screen and (min-width: 575px) {
+            @content;
+        }
+    }
+}

@@ -1,0 +1,201 @@
+@use "sass:map";
+@import "/src/style/pages/all";
+
+.container__categories__slider {
+  max-width: 1200px !important;
+  margin-top: 30px !important;
+
+  .categories__slider {
+    .categories__slider__item {
+      height: 200px;
+      position: relative;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top center;
+      border-radius: 3px;
+      transition: all 0.3s;
+
+      p {
+        position: absolute;
+        bottom: 0px;
+        text-align: center;
+        font-size: 0px;
+        color: map.get($theme-color, "normal-text");
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding: 12px 0 10px;
+        width: 100%;
+        height: 0;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      &:hover p {
+        // width: 100%;
+        height: 20%;
+        background-color: map.get($theme-color, "main");
+        color: #fff;
+        font-size: 16px;
+      }
+    }
+
+    .react-multi-carousel-item:not(:first-child):not(:last-child) {
+      margin: 0 2px;
+    }
+  }
+}
+
+.featured {
+  margin-top: 50px;
+
+  .section__title {
+    margin-bottom: 50px;
+    text-align: center;
+
+    h2 {
+      position: relative;
+    }
+
+    h2:after {
+      content: "";
+      position: absolute;
+      width: 80px;
+      height: 4px;
+      bottom: -16px;
+      right: 0;
+      left: 0;
+      margin: 0 auto;
+      background-color: map.get($theme-color, "main");
+    }
+  }
+
+  .react-tabs {
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 50px;
+      list-style: none;
+
+      li {
+        font-size: 16px;
+        padding-bottom: 4px;
+        color: map.get($theme-color, "normal-text");
+        cursor: pointer;
+        margin-right: 20px;
+        outline: none;
+      }
+    }
+  }
+
+  .featured_item {
+    margin-bottom: 30px;
+    margin: 0 10px;
+
+    &:hover ul {
+      bottom: -15% !important;
+      // background-color: map.get($theme-color, "main");
+
+      svg {
+        transform: rotate(360deg) !important;
+      }
+    }
+
+    .featured__item__pic {
+      // width: 270px;
+      height: 270px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      overflow: hidden;
+      position: relative;
+
+      ul {
+        position: absolute;
+        text-align: center;
+        list-style: none;
+        left: 0;
+        bottom: -40%;
+        width: 100%;
+        transition: all 0.5s;
+        display: flex;
+        // justify-content: space-evenly;
+
+        li {
+          background-color: rgb(132, 199, 65);
+          border-radius: 50%;
+          padding: 8px;
+          margin: 0 20px;
+          svg {
+            font-size: 22px;
+            color: #fff;
+            transition: all 0.7s;
+            display: block;
+          }
+        }
+      }
+    }
+
+    .featured__item__text {
+      text-align: center;
+      margin: 20px 0;
+      a {
+        text-decoration: none;
+        font-size: 16px;
+        color: map.get($theme-color, "normal-text");
+      }
+      h4 {
+        color: map.get($theme-color, "normal-text");
+        font-size: 18px;
+        font-weight: 700;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.banner {
+  display: flex;
+  margin: 50px 0;
+  gap: 20px;
+
+  .banner__pic {
+    width: 100%;
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+
+    .banner__pic__text {
+      position: absolute;
+      top: 38%;
+      right: 6%;
+      z-index: 9;
+
+      h2 {
+        font-size: 34px;
+      }
+
+      p {
+        padding: 10px 0;
+        letter-spacing: 2px;
+      }
+
+      button {
+        width: 120px;
+        height: 30px;
+        margin-top: 20px;
+        font-weight: 600;
+        text-transform: uppercase;
+        border-radius: 50px;
+
+        &:hover {
+          cursor: pointer;
+          background-color: map.get($theme-color, "main-hover");
+        }
+      }
+    }
+  }
+}
